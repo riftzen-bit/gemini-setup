@@ -1,0 +1,62 @@
+name: Gemini Setup CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Make install script executable
+        run: chmod +x install.sh
+      - name: Run install script
+        run: ./install.sh
+      - name: Verify installation
+        run: |
+          if [ ! -d "$HOME/.gemini/agents" ]; then exit 1; fi
+          if [ ! -d "$HOME/.gemini/rules" ]; then exit 1; fi
+          if [ ! -d "$HOME/.gemini/skills" ]; then exit 1; fi
+          if [ ! -f "$HOME/.gemini/GEMINI.md" ]; then exit 1; fi
+          if [ ! -f "$HOME/.gemini/SYSTEM.md" ]; then exit 1; fi
+          echo "Verification passed."
+
+  test-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Make install script executable
+        run: chmod +x install.sh
+      - name: Run install script
+        run: ./install.sh
+      - name: Verify installation
+        run: |
+          if [ ! -d "$HOME/.gemini/agents" ]; then exit 1; fi
+          if [ ! -d "$HOME/.gemini/rules" ]; then exit 1; fi
+          if [ ! -d "$HOME/.gemini/skills" ]; then exit 1; fi
+          if [ ! -f "$HOME/.gemini/GEMINI.md" ]; then exit 1; fi
+          if [ ! -f "$HOME/.gemini/SYSTEM.md" ]; then exit 1; fi
+          echo "Verification passed."
+
+  test-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run install script
+        run: .\install.ps1
+        shell: powershell
+      - name: Verify installation
+        run: |
+          if (!(Test-Path "$env:USERPROFILE\.gemini\agents")) { exit 1 }
+          if (!(Test-Path "$env:USERPROFILE\.gemini\rules")) { exit 1 }
+          if (!(Test-Path "$env:USERPROFILE\.gemini\skills")) { exit 1 }
+          if (!(Test-Path "$env:USERPROFILE\.gemini\GEMINI.md")) { exit 1 }
+          if (!(Test-Path "$env:USERPROFILE\.gemini\SYSTEM.md")) { exit 1 }
+          Write-Host "Verification passed."
+        shell: powershell
