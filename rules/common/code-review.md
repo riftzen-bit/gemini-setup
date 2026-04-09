@@ -76,7 +76,7 @@ Use these agents for code review:
 2. Check security checklist first
 3. Review code quality checklist
 4. Run relevant tests
-5. Verify coverage >= 80%
+5. Verify coverage == 100%
 6. Use appropriate agent for detailed review
 ```
 

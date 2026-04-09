@@ -121,7 +121,7 @@ Use descriptive names with `@DisplayName`:
 
 ## Coverage
 
-- Target 80%+ line coverage
+- Target 100% line coverage
 - Use JaCoCo for coverage reporting
 - Focus on service and domain logic — skip trivial getters/config classes
 

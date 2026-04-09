@@ -135,7 +135,7 @@ Use descriptive names that explain the scenario:
 ```bash
 cargo llvm-cov                       # Summary
 cargo llvm-cov --html                # HTML report
-cargo llvm-cov --fail-under-lines 80 # Fail if below threshold
+cargo llvm-cov --fail-under-lines 100 # Fail if below threshold
 ```
 
 ## Testing Commands
