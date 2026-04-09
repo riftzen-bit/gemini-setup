@@ -1,23 +1,25 @@
 # Security Guidelines
 
-## Mandatory Security Checks
+## Extreme Paranoia Security Mode (CRITICAL)
 
-Before ANY commit:
-- [ ] No hardcoded secrets (API keys, passwords, tokens)
-- [ ] All user inputs validated
-- [ ] SQL injection prevention (parameterized queries)
-- [ ] XSS prevention (sanitized HTML)
-- [ ] CSRF protection enabled
-- [ ] Authentication/authorization verified
-- [ ] Rate limiting on all endpoints
-- [ ] Error messages don't leak sensitive data
+Security is paramount and non-negotiable. Any security flaw is considered a catastrophic failure.
 
-## Secret Management
+Before ANY commit or file save:
+- [ ] ZERO hardcoded secrets (API keys, passwords, tokens, URLs with tokens).
+- [ ] 100% of user inputs are rigorously validated and sanitized at boundaries.
+- [ ] SQL injection prevention (parameterized queries strictly enforced).
+- [ ] XSS prevention (strict escaping/sanitization).
+- [ ] CSRF protection enabled by default.
+- [ ] Authentication/authorization verified on EVERY sensitive route/function.
+- [ ] Rate limiting applied to all endpoints.
+- [ ] Error messages NEVER leak stack traces or sensitive data to the client.
+- [ ] No vulnerable dependencies allowed.
 
-- NEVER hardcode secrets in source code
-- ALWAYS use environment variables or a secret manager
-- Validate that required secrets are present at startup
-- Rotate any secrets that may have been exposed
+## Secret Management (Zero Tolerance)
+
+- NEVER hardcode secrets in source code. Even testing keys.
+- ALWAYS use environment variables (`.env` not committed) or a dedicated secret manager.
+- Fail immediately at application startup if required secrets are missing.
 
 ## Security Response Protocol
 

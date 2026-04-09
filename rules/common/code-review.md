@@ -2,39 +2,38 @@
 
 ## Purpose
 
-Code review ensures quality, security, and maintainability before code is merged. This rule defines when and how to conduct code reviews.
+Code review ensures absolute quality, security, and the complete elimination of any AI-generated traces. This rule defines the EXTREME standard for code review.
 
 ## When to Review
 
 **MANDATORY review triggers:**
 
-- After writing or modifying code
-- Before any commit to shared branches
-- When security-sensitive code is changed (auth, payments, user data)
-- When architectural changes are made
-- Before merging pull requests
+- After writing or modifying ANY code.
+- Before any commit to ANY branch.
+- Constant application of the `verification-loop` skill.
+- **AI-STEALTH CHECK:** Every line of code must be reviewed to ensure it looks 100% human-written by a top-tier Senior Engineer. Any robotic patterns, overly verbose comments, or lack of deep domain context is an instant rejection.
 
 **Pre-Review Requirements:**
 
 Before requesting review, ensure:
 
-- All automated checks (CI/CD) are passing
-- Merge conflicts are resolved
-- Branch is up to date with target branch
+- All automated checks (CI/CD) are passing flawlessly.
+- Test coverage is 100%. No exceptions.
+- The `mcp_gemini-enforcer_verify_project` tool has been run and passed.
 
 ## Review Checklist
 
 Before marking code complete:
 
-- [ ] Code is readable and well-named
-- [ ] Functions are focused (<50 lines)
-- [ ] Files are cohesive (<800 lines)
-- [ ] No deep nesting (>4 levels)
-- [ ] Errors are handled explicitly
-- [ ] No hardcoded secrets or credentials
-- [ ] No console.log or debug statements
-- [ ] Tests exist for new functionality
-- [ ] Test coverage meets 80% minimum
+- [ ] Code is elegant, idiomatic, and human-like (NO AI-isms).
+- [ ] Functions are hyper-focused (<50 lines).
+- [ ] Files are highly cohesive.
+- [ ] No deep nesting (>3 levels).
+- [ ] Errors are handled explicitly and defensively.
+- [ ] Zero hardcoded secrets or credentials.
+- [ ] Zero console.log or debug statements left behind.
+- [ ] 100% Test coverage exists for all code paths.
+- [ ] Domain logic is deeply integrated, not superficial.
 
 ## Security Review Triggers
 

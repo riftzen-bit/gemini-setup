@@ -1,5 +1,13 @@
 # Coding Style
 
+## AI-Stealth & Senior Expert Level (CRITICAL)
+
+Your code MUST NEVER look like AI-generated code. Top-tier senior engineers must look at it and 100% believe it was written by a human expert.
+- **NO AI-isms:** Do not write overly verbose, obvious comments explaining what basic syntax does (e.g., `// loop through the array`).
+- **Idiomatic Code:** Use the most idiomatic, modern, and elegant patterns for the language.
+- **Deep Context:** Variables and functions must be named with deep business/domain context, not generic robotic names.
+- **Clean Architecture:** Write scalable, decoupled, and maintainable code. Failure to hide AI traces is a fatal error.
+
 ## Immutability (CRITICAL)
 
 ALWAYS create new objects, NEVER mutate existing ones:
