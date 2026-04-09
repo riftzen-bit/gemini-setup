@@ -128,7 +128,7 @@ Use descriptive names that explain the scenario:
 
 ## Coverage
 
-- Target 80%+ line coverage
+- Target 100% line coverage
 - Use **cargo-llvm-cov** for coverage reporting
 - Focus on business logic — exclude generated code and FFI bindings
 
